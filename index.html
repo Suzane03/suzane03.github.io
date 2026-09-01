@@ -34,7 +34,6 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -56,7 +55,6 @@
             66% { transform: translate(-20px, 20px) scale(0.9); }
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -125,14 +123,12 @@
             width: 100%;
         }
 
-        /* Container */
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -143,6 +139,23 @@
 
         .hero-content {
             animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-flex {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.25);
+            flex-shrink: 0;
         }
 
         @keyframes fadeInUp {
@@ -239,7 +252,6 @@
             transform: translateY(-2px);
         }
 
-        /* Stats Section */
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -279,7 +291,6 @@
             font-size: 0.9rem;
         }
 
-        /* Section Styles */
         section {
             padding: 6rem 0;
         }
@@ -310,7 +321,6 @@
             font-size: 1.1rem;
         }
 
-        /* Experience Cards */
         .experience-grid {
             display: grid;
             gap: 2rem;
@@ -398,7 +408,6 @@
             font-size: 1.2rem;
         }
 
-        /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -477,7 +486,6 @@
             color: var(--primary);
         }
 
-        /* Skills Section */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -525,7 +533,6 @@
             transform: translateY(-2px);
         }
 
-        /* Contact Section */
         .contact {
             text-align: center;
             padding: 6rem 0 4rem;
@@ -564,7 +571,6 @@
             border-color: var(--primary);
         }
 
-        /* Footer */
         footer {
             padding: 2rem;
             text-align: center;
@@ -573,7 +579,6 @@
             font-size: 0.9rem;
         }
 
-        /* Scroll Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -585,7 +590,6 @@
             transform: translateY(0);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             nav .container {
                 flex-direction: column;
@@ -615,13 +619,17 @@
             .btn {
                 text-align: center;
             }
+
+            .hero-flex {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
     <div class="bg-animation"></div>
 
-    <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="logo">SF.</div>
@@ -635,29 +643,32 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="hero-label">🎓 MS Data Science @ University of Michigan</span>
-                <h1>
-                    Hey, I'm <span class="gradient-text">Suzane</span><br>
-                    Building intelligent systems with ML & AI
-                </h1>
-                <p class="hero-description">
-                    Data Science grad student obsessed with machine learning, LLMs, and RAG systems. 
-                    I build production ML systems that deliver measurable impact—from 41% cost reduction 
-                    in LLM routing to 92% accuracy in safety-critical detection systems.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="mailto:suzanef@umich.edu" class="btn btn-secondary">Get in Touch</a>
+                <div class="hero-flex">
+                    <img src="assets/profile-photo.jpg" alt="Suzane Fernandes" class="hero-photo">
+                    <div>
+                        <span class="hero-label">🎓 MS Data Science @ University of Michigan</span>
+                        <h1>
+                            Hey, I'm <span class="gradient-text">Suzane</span><br>
+                            Building intelligent systems with ML & AI
+                        </h1>
+                        <p class="hero-description">
+                            Data Science grad student and Engineering Intern at Utilidata, obsessed with machine learning, LLMs, and RAG systems.
+                            I build production ML systems that deliver measurable impact—from 41% cost reduction
+                            in LLM routing to 92% accuracy in safety-critical detection systems.
+                        </p>
+                        <div class="cta-buttons">
+                            <a href="#projects" class="btn btn-primary">View Projects</a>
+                            <a href="mailto:suzanef@umich.edu" class="btn btn-secondary">Get in Touch</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats -->
     <div class="container">
         <div class="stats">
             <div class="stat-card">
@@ -673,13 +684,12 @@
                 <span class="stat-label">Accuracy in Safety Systems</span>
             </div>
             <div class="stat-card">
-                <span class="stat-number">2</span>
-                <span class="stat-label">Peer-Reviewed Publications</span>
+                <span class="stat-number">3</span>
+                <span class="stat-label">Peer-Reviewed / Accepted Publications</span>
             </div>
         </div>
     </div>
 
-    <!-- About Section -->
     <section id="about">
         <div class="container">
             <div class="section-header fade-in">
@@ -694,7 +704,6 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience">
         <div class="container">
             <div class="section-header fade-in">
@@ -703,6 +712,22 @@
             </div>
             
             <div class="experience-grid">
+                <div class="experience-card fade-in">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Engineering Intern</h3>
+                            <div class="experience-company">Utilidata, Inc. — Ann Arbor, MI</div>
+                        </div>
+                        <span class="experience-date">2026 – Present</span>
+                    </div>
+                    <ul class="experience-highlights">
+                        <li>M.S. Data Science student bringing 1+ year of production data/ML experience into a grid-edge engineering team</li>
+                        <li>Working within Utilidata's Ann Arbor innovation lab as part of the Perot Jain Tech Lab (PJTL) capstone program (see PJTL project below)</li>
+                        <li>Picked up edge hardware bring-up and time-synchronization work alongside the core capstone — a shift toward the hardware-software boundary</li>
+                        <li>Set up a Mac-based dev environment (OrbStack + Tailscale) to work with a remote GPU server for the team's pipelines</li>
+                    </ul>
+                </div>
+
                 <div class="experience-card fade-in">
                     <div class="experience-header">
                         <div>
@@ -751,7 +776,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <div class="section-header fade-in">
@@ -765,12 +789,32 @@
 
             <div class="projects-grid">
                 <div class="project-card fade-in">
+                    <div class="project-icon">⚡</div>
+                    <h3 class="project-title">PJTL Capstone: NLQ-to-Waveform Mapping</h3>
+                    <p class="project-description">
+                        Perot Jain Tech Lab capstone with Utilidata investigating whether natural-language 
+                        queries to SLMs/LLMs can be mapped to predictable electrical waveform patterns for 
+                        automated load balancing and grid-edge decision-making. Built on a Flow Matching–based 
+                        generative model, targeting sub-100ms inference latency and ≤0.5% waveform-prediction 
+                        loss, with an embedding path toward Utilidata's Gen 7 chip. Includes edge time-synchronization 
+                        research (GPS-locked vs. free-running crystal clocks, PPS event detection) and a 
+                        formal multi-semester proposal spanning Winter–Fall 2026.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Flow Matching</span>
+                        <span class="tag">Grid-Edge ML</span>
+                        <span class="tag">Signal Processing</span>
+                        <span class="tag">Parquet Pipelines</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
                     <div class="project-icon">🎭</div>
                     <h3 class="project-title">AURA: Deepfake Detection System</h3>
                     <p class="project-description">
                         Multi-model ensemble classifier achieving 90% accuracy on 3,278 videos, 
                         detecting AI-generated deepfakes across 8+ deep learning architectures 
-                        with real-time inference capabilities.
+                        with real-time inference capabilities. Paper accepted at IEEE EIT 2026.
                     </p>
                     <div class="project-tags">
                         <span class="tag">PyTorch</span>
@@ -833,7 +877,7 @@
                     <p class="project-description">
                         Multi-module Advanced Driver Assistance System achieving 92% accident 
                         detection accuracy with 2.8s response latency, featuring YOLOv5 traffic 
-                        sign classification and LSTM-based lane detection.
+                        sign classification and LSTM-based lane detection. Published in IJIRCCE, Vol. 13(3).
                     </p>
                     <div class="project-tags">
                         <span class="tag">YOLOv5</span>
@@ -842,11 +886,24 @@
                         <span class="tag">Real-time</span>
                     </div>
                 </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-icon">🍲</div>
+                    <h3 class="project-title">Inverse Recipe Generation & Food Quality Detection</h3>
+                    <p class="project-description">
+                        System integrating methane and environmental sensor data to assess food 
+                        quality and generate recipes from available ingredients. Published in YMER Digital.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Sensor Fusion</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Applied ML</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills">
         <div class="container">
             <div class="section-header fade-in">
@@ -907,7 +964,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container fade-in">
             <div class="section-label">Get In Touch</div>
@@ -919,14 +975,13 @@
             
             <div class="social-links">
                 <a href="mailto:suzanef@umich.edu" class="social-link" title="Email">✉</a>
-                <a href="https://linkedin.com/in/suzane-fernandes-90153324a" class="social-link" target="_blank" title="LinkedIn">in</a>
+                <a href="https://www.linkedin.com/in/suzane-fernandes-90153324a/" class="social-link" target="_blank" title="LinkedIn">in</a>
                 <a href="https://github.com/suzane03" class="social-link" target="_blank" title="GitHub">{ }</a>
                 <a href="https://researchgate.net/profile/Suzane-Fernandes-2" class="social-link" target="_blank" title="ResearchGate">RG</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>© 2026 Suzane Fernandes. Built with curiosity and caffeine.</p>
@@ -934,7 +989,6 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -948,7 +1002,6 @@
             });
         });
 
-        // Scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -964,7 +1017,6 @@
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Add active state to nav links on scroll
         window.addEventListener('scroll', () => {
             let current = '';
             const sections = document.querySelectorAll('section[id]');
